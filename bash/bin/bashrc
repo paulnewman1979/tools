@@ -1,0 +1,7 @@
+# User specific aliases and functions
+alias ll="ls -l"
+alias vi="vim"
+
+export GIT=/home/taoliu/git
+export GIT_EDITOR=vim
+export PATH=/home/taoliu/bin:$PATH

@@ -1,0 +1,14 @@
+if [ "x$YROOT_NAME" != "x" ]; then
+    export PS1="[\u@$YROOT_NAME \W]\$ "
+else
+    export PS1="[\u \W]\$ "
+fi
+
+export PATH=/home/taoliu/bin:/home/y/bin:/home/y/bin64/:$PATH
+export LD_LIBRARY_PATH=/home/y/lib:/home/y/lib64/:/usr/lib
+
+#alias python="python3.5"
+alias stcc="statecc-yidf-flatten --platform rhel6 --out new.state -br test"
+
+export MAVEN_OPTS='-Xms256m -Xmx512m -Xss200m'
+

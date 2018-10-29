@@ -1,0 +1,26 @@
+#!/bin/bash
+
+if [ "$1" == "" ]
+then
+	print "usage"
+fi
+
+if [ "$1" == "ls" ]
+then
+	name=$2
+	grep -n "$name" /Users/taoliu/bin/servers.txt
+	exit 0
+elif [ "$1" == "n" ]
+then
+	index=$2
+	server=`head -n $index /Users/taoliu/bin/servers.txt | tail -n 1 | awk -F'\t' '{print $2}'`
+	echo "ssh $server"
+	ssh $server
+else
+    name=$1
+	server=`cat /Users/taoliu/bin/servers.txt | grep "^$name	" | awk -F'\t' '{print $2}'`
+	echo "ssh $server"
+	ssh $server
+fi
+
+
